@@ -133,10 +133,10 @@ dmypy.json
 .pyre/
 
 # user defined
-nseBhav
-nseDelivery
-nseIndices
+# nseBhav
+# nseDelivery
+# nseIndices
 nse_cookies.pkl
 src/defs/user.json
-src/data/*
+# src/data/*
 !src/data/sectors.csv
