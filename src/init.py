@@ -55,7 +55,7 @@ if args.config:
     exit(str(defs.config))
 
 try:
-    nse = NSE(defs.DIR, server=True)
+    nse = NSE(defs.DIR, server=False)
 except (TimeoutError, ConnectionError, ConnectError) as e:
     logger.warning(f"Network error connecting to NSE - Please try again later. - {e!r}")
     exit()
