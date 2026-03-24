@@ -28,8 +28,21 @@ if %ERRORLEVEL% EQU 0 (
     if %ERRORLEVEL% EQU 0 (
         echo.
         echo [3/3] Pushing data to GitHub...
+        
+        :: Push changes in eod2_data repository
+        if exist src\eod2_data\.git (
+            echo - Updating eod2_data repository...
+            pushd src\eod2_data
+            git add .
+            git commit -m "Auto-sync eod2_data: %date% %time%" >nul 2>&1
+            git push
+            popd
+        )
+
+        :: Push changes in root repository
         git add .
-        git commit -m "Auto-sync stock data: %date% %time%" && git push
+        git commit -m "Auto-sync stock data: %date% %time%" >nul 2>&1
+        git push
     )
 )
 
